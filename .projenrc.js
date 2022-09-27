@@ -1,11 +1,38 @@
 const { typescript } = require('projen');
+
 const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: 'main',
-  name: 'cdk-steampipe',
+  name: '@wheatstalk/cdk-steampipe',
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  deps: [
+    'execa@^4',
+  ],
+
+  peerDeps: [
+    'aws-cdk',
+    'aws-cdk-lib@^2.41.0',
+    'aws-sdk',
+    'constructs@^10',
+  ],
+
+  devDeps: [
+    'esbuild',
+    'esbuild-runner',
+  ],
 });
+
+const ignores = [
+  '/cdk.out',
+  '/cdk.context.json',
+];
+
+ignores.forEach(ig => {
+  project.addGitIgnore(ig);
+  project.addPackageIgnore(ig);
+});
+
+project.addTask('synth', {
+  exec: 'cdk synth --plugin $PWD/lib/plugin.js --app "esr test/app.ts"',
+});
+
 project.synth();

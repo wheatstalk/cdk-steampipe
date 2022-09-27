@@ -1,32 +1,5 @@
-# CDK Steampipe
-
-Run Steampipe queries in your AWS CDK app to lookup account resources in an
-idiomatic way.
-
-> Warning: This project depends on **alpha** features in the AWS CDK.
-> Please treat this project as only a proof of concept.
-
-## Usage
-
-First, [install Steampipe](https://steampipe.io/downloads) and Steampipe's
-`aws` plugin to your environment and add `@wheatstalk/cdk-steampipe` to your
-project dependencies.
-
-Then add `@wheatstalk/cdk-steampipe/lib/plugin` to your project as a plugin.
-
-```json
-{
-  "app": "npx ts-node bin/app.ts",
-  "plugin": ["@wheatstalk/cdk-steampipe/lib/plugin"]
-}
-```
-
-And in your App, use `SteampipeContextQuery.execute` to execute Steampipe
-queries:
-
-```ts
 import { App, aws_ssm, Stack } from 'aws-cdk-lib';
-import { SteampipeContextQuery } from '@wheatstalk/cdk-steampipe';
+import { SteampipeContextQuery } from '../src';
 
 const app = new App();
 
@@ -54,4 +27,3 @@ rows.forEach((row, i) => {
 });
 
 app.synth();
-```
