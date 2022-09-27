@@ -1,8 +1,12 @@
 const { typescript } = require('projen');
+const { NpmAccess } = require('projen/lib/javascript');
 
 const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: 'main',
   name: '@wheatstalk/cdk-steampipe',
+
+  releaseToNpm: true,
+  npmAccess: NpmAccess.PUBLIC,
 
   deps: [
     'execa@^4',
