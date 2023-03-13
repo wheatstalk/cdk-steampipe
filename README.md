@@ -12,7 +12,7 @@ First, [install Steampipe](https://steampipe.io/downloads) and Steampipe's
 `aws` plugin to your environment and add `@wheatstalk/cdk-steampipe` to your
 project dependencies.
 
-Then add `@wheatstalk/cdk-steampipe/lib/plugin` to your project as a plugin.
+Then add `@wheatstalk/cdk-steampipe/lib/plugin` to your `cdk.json` as a plugin.
 
 ```json
 {
