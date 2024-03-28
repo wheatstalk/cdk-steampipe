@@ -6,35 +6,22 @@
     },
     {
       "name": "@types/node",
-      "version": "^14",
+      "version": "^18",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "version": "^5",
+      "version": "^6",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/parser",
-      "version": "^5",
-      "type": "build"
-    },
-    {
-      "name": "aws-cdk",
-      "type": "build"
-    },
-    {
-      "name": "aws-cdk-lib",
-      "version": "2.41.0",
-      "type": "build"
-    },
-    {
-      "name": "aws-sdk",
+      "version": "^6",
       "type": "build"
     },
     {
       "name": "constructs",
-      "version": "10.0.0",
+      "version": "^10.0.0",
       "type": "build"
     },
     {
@@ -43,10 +30,6 @@
     },
     {
       "name": "esbuild-runner",
-      "type": "build"
-    },
-    {
-      "name": "eslint-import-resolver-node",
       "type": "build"
     },
     {
@@ -68,15 +51,6 @@
     },
     {
       "name": "jest-junit",
-      "version": "^13",
-      "type": "build"
-    },
-    {
-      "name": "json-schema",
-      "type": "build"
-    },
-    {
-      "name": "npm-check-updates",
       "version": "^15",
       "type": "build"
     },
